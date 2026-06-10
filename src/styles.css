@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
+@font-face {
+  font-family: 'Jonathan Signature';
+  src: url('./assets/fonts/JonathanSignature.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-jonathan {
+  font-family: 'Jonathan Signature', cursive;
+}
 
 /* =========================
    BASE GLOBAL
