@@ -62,14 +62,46 @@ img {
 /* =========================
    NAVBAR NEÓN
 ========================= */
+.nav-split {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.nav-group {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.nav-group-left {
+  right: calc(52% + 120px);
+  justify-content: flex-end;
+}
+
+.nav-group-right {
+  left: calc(45% + 120px);
+  justify-content: flex-start;
+}
 
 .nav-neon {
+  display: inline-flex;
+  align-items: center;
   color: #ff4fcf;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
   text-shadow:
     0 0 4px #ff9be8,
     0 0 10px #ff00ba,
@@ -86,24 +118,23 @@ img {
 }
 
 .nav-star {
+  flex-shrink: 0;
   color: #f5d9ff;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   line-height: 1;
   text-shadow:
     0 0 5px #fff,
     0 0 14px #00d9ff,
     0 0 22px #ff00ba;
 }
-
 /* =========================
    HERO PRINCIPAL
 ========================= */
-
 .hero-script {
-  font-family: 'Imperial Script', cursive;
+  font-family: 'Jonathan Signature', cursive;
   color: #ffe5fb;
   font-weight: 400;
-  line-height: 0.72;
+  line-height: 0.82;
   text-shadow:
     0 0 3px #ffffff,
     0 0 8px #ff9be8,
@@ -113,16 +144,22 @@ img {
 }
 
 .hero-los {
-  font-size: clamp(7rem, 13vw, 12rem);
+  font-size: clamp(14.3rem, 10.5vw, 10.5rem);
+  transform: rotate(-2deg);
 }
 
 .hero-de {
-  font-size: clamp(6.5rem, 11vw, 10rem);
+  display: block;
+  margin-right: 1.3rem;
+  font-size: clamp(14.8rem, 5vw, 7rem);
+  transform: rotate(-3deg);
 }
 
 .hero-cata {
-  margin-top: -0.28em;
-  font-size: clamp(7rem, 12vw, 11rem);
+  display: block;
+  margin-top: -0.05em;
+  font-size: clamp(15.2rem, 10vw, 9.4rem);
+  transform: rotate(-2deg);
 }
 
 /* =========================
@@ -153,6 +190,7 @@ img {
     0 0 22px #00d9ff,
     0 0 44px #00d9ff;
 }
+
 
 /* =========================
    RESPONSIVE
