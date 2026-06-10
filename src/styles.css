@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* =========================
+   BASE GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  color: #fff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #ff38c7;
+  color: #fff;
+}
+
+/* =========================
+   SECCIONES TEMPORALES
+========================= */
+
+.section-test {
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   NAVBAR NEÓN
+========================= */
+
+.nav-neon {
+  color: #ff4fcf;
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-shadow:
+    0 0 4px #ff9be8,
+    0 0 10px #ff00ba,
+    0 0 18px #ff00ba;
+  transition: 0.2s ease;
+}
+
+.nav-neon:hover {
+  color: #fff;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 12px #ff00ba,
+    0 0 25px #ff00ba;
+}
+
+.nav-star {
+  color: #f5d9ff;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 14px #00d9ff,
+    0 0 22px #ff00ba;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+
+.hero-script {
+  font-family: 'Imperial Script', cursive;
+  color: #ffe5fb;
+  font-weight: 400;
+  line-height: 0.72;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 8px #ff9be8,
+    0 0 18px #ff4fd8,
+    0 0 34px #ff00bf,
+    0 0 55px #ff00bf;
+}
+
+.hero-los {
+  font-size: clamp(7rem, 13vw, 12rem);
+}
+
+.hero-de {
+  font-size: clamp(6.5rem, 11vw, 10rem);
+}
+
+.hero-cata {
+  margin-top: -0.28em;
+  font-size: clamp(7rem, 12vw, 11rem);
+}
+
+/* =========================
+   NEÓN GENERAL
+========================= */
+
+.neon-pink {
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px #ff8ee7,
+    0 0 22px #ff00b8,
+    0 0 45px #ff00b8,
+    0 0 75px #ff00b8;
+}
+
+.neon-green {
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px #c5ff72,
+    0 0 22px #89ff19,
+    0 0 44px #89ff19;
+}
+
+.neon-cyan {
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px #48f6ff,
+    0 0 22px #00d9ff,
+    0 0 44px #00d9ff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .nav-neon {
+    font-size: 0.48rem;
+  }
+
+  .nav-star {
+    font-size: 0.8rem;
+  }
+
+  .hero-los {
+    font-size: 4.8rem;
+  }
+
+  .hero-de,
+  .hero-cata {
+    font-size: 4.5rem;
+  }
+}
