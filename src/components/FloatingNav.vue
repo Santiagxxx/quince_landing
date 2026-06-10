@@ -1,27 +1,33 @@
 <script setup>
-defineProps({
-  items: {
-    type: Array,
-    required: true
-  }
-})
-
-const goToSection = (id) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
+const navItems = [
+  'Inicio',
+  'Cata',
+  'El evento',
+  'Dress-code',
+  'Tu huella',
+  'Lluvia de sobres',
+  'Te esperamos',
+]
 </script>
 
 <template>
-  <nav class="floating-nav" aria-label="Navegación de la invitación">
-    <button
-      v-for="item in items"
-      :key="item.id"
-      class="nav-dot"
-      type="button"
-      :aria-label="`Ir a ${item.label}`"
-      @click="goToSection(item.id)"
-    >
-      <span>{{ item.label }}</span>
-    </button>
-  </nav>
+  <header class="relative z-50 h-[58px] bg-black">
+    <nav class="mx-auto flex h-full max-w-[980px] items-center justify-center gap-4 px-4">
+      <template v-for="(item, index) in navItems" :key="item">
+        <a
+          href="#"
+          class="nav-neon"
+        >
+          {{ item }}
+        </a>
+
+        <span
+          v-if="index !== navItems.length - 1"
+          class="nav-star"
+        >
+          ✦
+        </span>
+      </template>
+    </nav>
+  </header>
 </template>

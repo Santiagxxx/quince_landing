@@ -1,27 +1,25 @@
 <script setup>
-import LandingSection from './components/LandingSection.vue'
-import RsvpSection from './components/RsvpSection.vue'
-import FloatingNav from './components/FloatingNav.vue'
-import { sections } from './data/sections'
+import FloatingNav from "./components/FloatingNav.vue";
+import HeroSection from "./components/HeroSection.vue";
+import About from "./components/AboutCataSection.vue";
+import Evento from './components/EventoSection.vue';
+import DressCode from './components/DressCodeSection.vue';
+import Album from './components/SharedAlbumSection.vue';
+import Sobres from './components/EnvelopeSection.vue';
+import Final from './components/FinalSection.vue';
 
-const navItems = [
-  ...sections.map(({ id, label }) => ({ id, label })),
-  { id: 'te-esperamos', label: 'Te esperamos' }
-]
+
 </script>
 
 <template>
-  <main class="landing" aria-label="Invitación digital Los 15 de Cata">
-    <FloatingNav :items="navItems" />
-
-    <LandingSection
-      v-for="section in sections"
-      :key="section.id"
-      :id="section.id"
-      :image="section.image"
-      :alt="section.alt"
-    />
-
-    <RsvpSection id="te-esperamos" />
+  <main class="min-h-screen bg-black text-white overflow-x-hidden">
+    <FloatingNav />
+    <HeroSection />
+    <About />
+    <Evento />
+    <DressCode/>
+    <Album />
+    <Sobres />
+    <Final />
   </main>
 </template>
