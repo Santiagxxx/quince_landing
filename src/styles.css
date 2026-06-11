@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
+
 @font-face {
   font-family: 'Jonathan Signature';
   src: url('./assets/fonts/JonathanSignature.ttf') format('truetype');
@@ -41,6 +42,10 @@ img {
   color: #fff;
 }
 
+section {
+  scroll-margin-top: 90px;
+}
+
 /* =========================
    SECCIONES TEMPORALES
 ========================= */
@@ -62,50 +67,17 @@ img {
 /* =========================
    NAVBAR NEÓN
 ========================= */
-.nav-split {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-.nav-group {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-}
-
-.nav-group-left {
-  right: calc(52% + 120px);
-  justify-content: flex-end;
-}
-
-.nav-group-right {
-  left: calc(45% + 120px);
-  justify-content: flex-start;
-}
 
 .nav-neon {
   display: inline-flex;
   align-items: center;
   color: #ff4fcf;
-  font-size: 0.62rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-decoration: none;
   white-space: nowrap;
   line-height: 1;
-  text-shadow:
-    0 0 4px #ff9be8,
-    0 0 10px #ff00ba,
-    0 0 18px #ff00ba;
   transition: 0.2s ease;
 }
 
@@ -120,16 +92,35 @@ img {
 .nav-star {
   flex-shrink: 0;
   color: #f5d9ff;
-  font-size: 1.15rem;
   line-height: 1;
   text-shadow:
     0 0 5px #fff,
     0 0 14px #00d9ff,
     0 0 22px #ff00ba;
 }
+
+/* Animación menú mobile */
+.menu-neon-enter-active,
+.menu-neon-leave-active {
+  transition: all 0.25s ease;
+}
+
+.menu-neon-enter-from,
+.menu-neon-leave-to {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.96);
+}
+
+.menu-neon-enter-to,
+.menu-neon-leave-from {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 /* =========================
    HERO PRINCIPAL
 ========================= */
+
 .hero-script {
   font-family: 'Jonathan Signature', cursive;
   color: #ffe5fb;
@@ -144,22 +135,20 @@ img {
 }
 
 .hero-los {
-  font-size: clamp(14.3rem, 10.5vw, 10.5rem);
+  font-size: clamp(5rem, 13vw, 12rem);
   transform: rotate(-2deg);
 }
 
 .hero-de {
   display: block;
   margin-right: 1.3rem;
-  font-size: clamp(14.8rem, 5vw, 7rem);
-  transform: rotate(-3deg);
+  font-size: clamp(4.8rem, 11vw, 10rem);
 }
 
 .hero-cata {
   display: block;
-  margin-top: -0.05em;
-  font-size: clamp(15.2rem, 10vw, 9.4rem);
-  transform: rotate(-2deg);
+  margin-top: -0.08em;
+  font-size: clamp(5rem, 12vw, 11rem);
 }
 
 /* =========================
@@ -191,26 +180,191 @@ img {
     0 0 44px #00d9ff;
 }
 
-
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 768px) {
-  .nav-neon {
-    font-size: 0.48rem;
+@media (max-width: 1280px) {
+  section {
+    scroll-margin-top: 82px;
   }
+}
 
-  .nav-star {
-    font-size: 0.8rem;
-  }
-
+@media (max-width: 420px) {
   .hero-los {
-    font-size: 4.8rem;
+    font-size: 4.5rem;
   }
 
-  .hero-de,
+  .hero-de {
+    font-size: 4.1rem;
+  }
+
   .hero-cata {
-    font-size: 4.5rem;
+    font-size: 4.4rem;
+  }
+}
+
+/* =========================
+   ANIMACIÓN INICIAL HERO
+========================= */
+
+/* LOS: empieza más hacia el centro y se abre a la izquierda */
+.hero-los-enter {
+  opacity: 0;
+  animation: heroLosEnter 2.2s ease forwards;
+  animation-delay: 0.15s;
+}
+
+/* DE CATA: empieza más hacia el centro y se abre a la derecha */
+.hero-cata-enter {
+  opacity: 0;
+  animation: heroCataEnter 2.2s ease forwards;
+  animation-delay: 0.15s;
+}
+
+/* Muñeca: aparece después del texto */
+.hero-doll-enter {
+  opacity: 0;
+  animation: heroDollEnter 1.4s ease forwards;
+  animation-delay: 1.45s;
+}
+
+/* Fecha: aparece al final */
+.hero-date-enter {
+  opacity: 0;
+  animation: heroDateEnter 0.9s ease forwards;
+  animation-delay: 2.35s;
+}
+
+/* Navbar: aparece de último */
+.nav-load-enter {
+  opacity: 0;
+  animation: navLoadEnter 0.9s ease forwards;
+  animation-delay: 2.65s;
+}
+
+@keyframes heroLosEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(22vw) scale(0.95) rotate(-2deg);
+    filter: blur(5px);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(-2deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroCataEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(-22vw) scale(0.95) rotate(-3deg);
+    filter: blur(5px);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(-3deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroDollEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(110px) scale(0.82);
+    filter: blur(8px);
+  }
+
+  70% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroDateEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navLoadEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-load-enter {
+  opacity: 0;
+  animation: navLoadEnter 0.9s ease forwards;
+  animation-delay: 2.65s;
+}
+
+@keyframes navLoadEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-separator-img {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .nav-separator-img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-separator-img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nav-separator-img {
+    width: 16px;
+    height: 16px;
   }
 }

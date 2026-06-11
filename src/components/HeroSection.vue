@@ -1,7 +1,7 @@
 <template>
   <section
     id="inicio"
-    class="relative h-[445px] overflow-visible bg-[#f2b2ef] md:h-[505px]"
+    class="relative min-h-[300px] overflow-visible bg-[#f2b2ef] pt-[82px] md:min-h-[700px] xl:pt-[86px]"
   >
     <!-- Fondo -->
     <div
@@ -10,40 +10,74 @@
 
     <!-- Brillos -->
     <div
-      class="absolute left-[8%] top-[20%] h-48 w-48 rounded-full bg-white/25 blur-3xl"
+      class="absolute left-[3%] top-[22%] h-36 w-36 rounded-full bg-white/25 blur-3xl sm:h-48 sm:w-48 md:left-[8%] md:top-[20%]"
     ></div>
+
     <div
-      class="absolute right-[12%] top-[18%] h-56 w-56 rounded-full bg-white/20 blur-3xl"
+      class="absolute right-[4%] top-[20%] h-40 w-40 rounded-full bg-white/20 blur-3xl sm:h-56 sm:w-56 md:right-[12%] md:top-[18%]"
     ></div>
+
     <div
-      class="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-fuchsia-400/20 blur-3xl"
+      class="absolute left-1/2 top-[6%] h-56 w-56 -translate-x-1/2 rounded-full bg-fuchsia-400/20 blur-3xl md:top-0 md:h-64 md:w-64"
     ></div>
-    <!-- Texto izquierdo -->
-    <div class="absolute left-[16%] top-[23%] z-20">
-      <p class="hero-script hero-los">Los</p>
+
+    <!-- Texto izquierdo: LOS -->
+    <div
+      class="hero-los-enter absolute left-[9%] top-[40%] z-30 sm:left-[10%] md:left-[20%] md:top-[30%]"
+    >
+      <p class="hero-script hero-los">
+        Los
+      </p>
     </div>
 
-    <!-- Texto derecho -->
-    <div class="absolute right-[12%] top-[15%] z-20 text-right">
-      <p class="hero-script hero-de">de</p>
-      <p class="hero-script hero-cata">Cata</p>
+    <!-- Texto derecho: DE CATA -->
+    <div
+      class="hero-cata-enter absolute right-[5%] top-[50%] z-30 text-right sm:right-[8%] md:right-[15%] md:top-[27%]"
+    >
+      <p class="hero-script hero-de -translate-x-7 -translate-y-5">
+        de
+      </p>
+
+      <p class="hero-script hero-cata">
+        Cata
+      </p>
     </div>
 
     <!-- Fecha -->
-    <div class="absolute bottom-[58px] left-[16%] z-20 text-[#b00094]">
-      <p class="text-[13px] font-black tracking-[0.18em]">19.07.2026</p>
-      <p class="mt-2 text-[13px] font-black tracking-[0.16em]">#CATALINA15</p>
+    <div
+      class="hero-date-enter absolute bottom-[14px] left-1/6 z-40 w-full -translate-x-1/2 text-center  text-[#b00094] md:bottom-[8px] md:left-[16%] md:w-auto md:translate-x-0 md:text-left"
+    >
+      <p class="text-[9px] font-black -translate-x-3 tracking-[0.18em] sm:text-[13px]">
+        19.07.2026
+      </p>
+
+      <p class="mt-2 text-[9px] font-black tracking-[0.16em] sm:text-[13px]">
+        #CATALINDA15
+      </p>
     </div>
 
-    <!-- Imagen central superpuesta al navbar -->
-    <div
-      class="pointer-events-none absolute inset-x-0 top-[-30px] bottom-0 z-[60] flex items-end justify-center"
-    >
-      <img
-        src="/images/cata15.png"
-        alt="Cata con número 15"
-        class="h-[95%] w-auto max-w-none object-contain object-bottom md:h-[95%]"
-      />
-    </div>
+    <!-- Imagen central encima del navbar - PC -->
+      <div
+        class="hero-doll-enter pointer-events-none absolute inset-x-0 top-[100px] bottom-0 z-[180] hidden items-end justify-center xl:flex"
+      >
+        <img
+          id="hero-doll-over-nav"
+          src="/images/cata15.png"
+          alt="Cata con número 15"
+          class="h-[calc(100%+86px)] w-auto max-w-none object-contain object-bottom"
+        />
+      </div>
+
+      <!-- Imagen responsive tablet/celular -->
+          <div
+            class="hero-doll-enter pointer-events-none absolute inset-x-0 top-[-150px] bottom-60 z-[0] flex items-end justify-center xl:hidden"
+          >
+            <img
+              data-doll-over-nav="true"
+              src="/images/cata15.png"
+              alt="Cata con número 15"
+              class="h-[calc(90%+38px)] w-auto max-w-none translate-y-[240px]  translate-x-[-5%] object-contain object-bottom sm:h-[calc(100%+68px)] md:h-[calc(100%+76px)]"
+            />
+          </div>
   </section>
 </template>
