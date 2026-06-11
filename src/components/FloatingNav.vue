@@ -1,57 +1,55 @@
 <script setup>
-import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
-
-const isSplit = ref(true)
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const navWrapperRef = ref(null)
 const navContentRef = ref(null)
 const navScale = ref(1)
 
-let ticking = false
 let resizeObserver = null
 let contentObserver = null
 
-const leftItems = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Cata', href: '#cata' },
-  { label: 'El evento', href: '#evento' },
+const navItems = [
+  {
+    label: 'Inicio',
+    href: '#inicio',
+    starAfter: '/images/estrellas/estrellas 4.png',
+  },
+  {
+    label: 'Cata',
+    href: '#cata',
+    starAfter: '/images/estrellas/estrellas 3.png',
+  },
+  {
+    label: 'Evento',
+    href: '#evento',
+    starAfter: '/images/estrellas/estrellas 4.png',
+  },
+  {
+    label: 'Dress-code',
+    href: '#dress-code',
+    starAfter: '/images/estrellas/estrellas 2.png',
+  },
+  {
+    label: 'Tu huella',
+    href: '#tu-huella',
+    starAfter: '/images/estrellas/estrellas 4.png',
+  },
+  {
+    label: 'Lluvia de sobres',
+    href: '#lluvia-sobres',
+    starAfter: '/images/estrellas/estrellas 1.png',
+  },
+  {
+    label: 'Asiste',
+    href: '#te-esperamos',
+    starAfter: null,
+  },
 ]
 
-const rightItems = [
-  { label: 'Dress-code', href: '#dress-code' },
-  { label: 'Tu huella', href: '#tu-huella' },
-  { label: 'Lluvia de sobres', href: '#lluvia-sobres' },
-  { label: 'Te esperamos', href: '#te-esperamos' },
-]
-
-const getVisibleDoll = () => {
-  const dolls = Array.from(
-    document.querySelectorAll('[data-doll-over-nav="true"]')
-  )
-
-  return dolls.find((doll) => doll.getClientRects().length > 0)
-}
-
-const getNavbarHeight = () => {
-  if (window.innerWidth < 640) return 70
-  if (window.innerWidth < 1024) return 68
-  if (window.innerWidth < 1280) return 76
-  return 86
-}
-
-const checkDollOverNavbar = () => {
-  const doll = getVisibleDoll()
-
-  if (!doll) {
-    isSplit.value = false
-    return
-  }
-
-  const rect = doll.getBoundingClientRect()
-  const navbarHeight = getNavbarHeight()
-
-  isSplit.value = rect.top < navbarHeight && rect.bottom > 0
-}
+const starScale = computed(() => {
+  const scale = navScale.value || 1
+  return Math.min(2.8, Math.max(1.4, 1.75 / scale))
+})
 
 const updateNavScale = async () => {
   await nextTick()
@@ -67,61 +65,39 @@ const updateNavScale = async () => {
 
     if (!availableWidth || !contentWidth) return
 
-    navScale.value = Math.min(1, (availableWidth - 4) / contentWidth)
+    navScale.value = Math.min(1, (availableWidth - 8) / contentWidth)
   })
 }
 
-const updateNavbar = async () => {
-  checkDollOverNavbar()
-  await updateNavScale()
-}
-
-const handleScroll = () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      updateNavbar()
-      ticking = false
-    })
-
-    ticking = true
-  }
-}
-
-const handleResize = () => {
-  updateNavbar()
-}
-
 onMounted(() => {
-  updateNavbar()
+  updateNavScale()
 
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  window.addEventListener('resize', handleResize)
+  window.addEventListener('resize', updateNavScale)
 
   if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', handleResize)
+    window.visualViewport.addEventListener('resize', updateNavScale)
   }
 
   if (navWrapperRef.value) {
-    resizeObserver = new ResizeObserver(updateNavbar)
+    resizeObserver = new ResizeObserver(updateNavScale)
     resizeObserver.observe(navWrapperRef.value)
   }
 
   if (navContentRef.value) {
-    contentObserver = new ResizeObserver(updateNavbar)
+    contentObserver = new ResizeObserver(updateNavScale)
     contentObserver.observe(navContentRef.value)
   }
 
-  setTimeout(updateNavbar, 100)
-  setTimeout(updateNavbar, 400)
-  setTimeout(updateNavbar, 1000)
+  setTimeout(updateNavScale, 100)
+  setTimeout(updateNavScale, 400)
+  setTimeout(updateNavScale, 1000)
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
-  window.removeEventListener('resize', handleResize)
+  window.removeEventListener('resize', updateNavScale)
 
   if (window.visualViewport) {
-    window.visualViewport.removeEventListener('resize', handleResize)
+    window.visualViewport.removeEventListener('resize', updateNavScale)
   }
 
   if (resizeObserver) {
@@ -135,7 +111,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <header class="fixed inset-x-0 top-0 z-[12000]">
+  <header class="nav-load-enter fixed inset-x-0 top-0 z-[12000]">
     <nav
       class="flex h-[70px] items-center justify-center overflow-hidden bg-black px-1 backdrop-blur-xl sm:h-[68px] sm:px-2 md:h-[76px] lg:px-4 xl:h-[86px] xl:px-6"
     >
@@ -145,105 +121,25 @@ onBeforeUnmount(() => {
       >
         <div
           ref="navContentRef"
-          class="flex min-w-max origin-center items-center justify-center"
-          :style="{ transform: `scale(${navScale})` }"
+          class="nav-content-fit flex min-w-max origin-center items-center justify-center"
+          :style="{
+            transform: `scale(${navScale})`,
+            '--star-scale': starScale,
+          }"
         >
-          <!-- Grupo izquierdo -->
-          <div
-            class="flex items-center justify-end gap-[0.20rem] sm:gap-1 md:gap-2 lg:gap-3 xl:gap-4 2xl:gap-6"
-            :class="
-              isSplit
-                ? '-translate-x-1 sm:-translate-x-2 md:-translate-x-4 xl:-translate-x-8'
-                : 'translate-x-0'
-            "
-          >
-            <template v-for="(item, index) in leftItems" :key="item.label">
-              <a
-                :href="item.href"
-                class="nav-neon whitespace-nowrap text-[0.40rem] sm:text-[0.43rem] md:text-[0.52rem] lg:text-[0.58rem] xl:text-[0.62rem] 2xl:text-[0.72rem]"
-                :class="item.label === 'El evento' ? '!font-black' : '!font-semibold'"
-              >
-                {{ item.label }}
-              </a>
+          <template v-for="item in navItems" :key="item.label">
+            <a :href="item.href" class="nav-neon">
+              {{ item.label }}
+            </a>
 
-              <img
-                v-if="index === 0"
-                src="/images/estrellas/estrellas 3.png"
-                alt=""
-                class="nav-separator-img"
-                @load="updateNavScale"
-              />
-
-              <img
-                v-if="index === 1"
-                src="/images/estrellas/estrellas 4.png"
-                alt=""
-                class="nav-separator-img"
-                @load="updateNavScale"
-              />
-            </template>
-          </div>
-
-          <!-- Hueco central con estrella -->
-          <div
-            class="flex shrink-0 items-center justify-center"
-            :class="
-              isSplit
-                ? 'w-[35px] opacity-100 sm:w-[105px] md:w-[150px] lg:w-[220px] xl:w-[330px] 2xl:w-[420px]'
-                : 'w-[18px] opacity-100 sm:w-[22px] md:w-[35px] lg:w-[45px] xl:w-[55px] 2xl:w-[75px]'
-            "
-          >
             <img
-              src="/images/estrellas/estrellas 2.png"
+              v-if="item.starAfter"
+              :src="item.starAfter"
               alt=""
-              class="nav-center-star"
+              class="nav-separator-img"
               @load="updateNavScale"
             />
-          </div>
-
-          <!-- Grupo derecho -->
-          <div
-            class="flex items-center justify-start gap-[0.18rem] sm:gap-1 md:gap-2 lg:gap-3 xl:gap-4 2xl:gap-6"
-            :class="
-              isSplit
-                ? 'translate-x-1 sm:translate-x-2 md:translate-x-4 xl:translate-x-8'
-                : 'translate-x-0'
-            "
-          >
-            <template v-for="(item, index) in rightItems" :key="item.label">
-              <a
-                :href="item.href"
-                class="nav-neon whitespace-nowrap text-[0.40rem] sm:text-[0.43rem] md:text-[0.52rem] lg:text-[0.58rem] xl:text-[0.62rem] 2xl:text-[0.72rem]"
-                :class="item.label === 'El evento' ? '!font-black' : '!font-semibold'"
-              >
-                {{ item.label }}
-              </a>
-
-              <img
-                v-if="index === 0"
-                src="/images/estrellas/estrellas 1.png"
-                alt=""
-                class="nav-separator-img"
-                @load="updateNavScale"
-              />
-
-              <img
-                v-if="index === 1"
-                src="/images/estrellas/estrellas 2.png"
-                alt=""
-                class="nav-separator-img"
-                @load="updateNavScale"
-              />
-
-              <img
-                v-if="index === 2"
-                src="/images/estrellas/estrellas 2.png"
-                alt=""
-                class="nav-separator-img"
-                @load="updateNavScale"
-              />
-            </template>
-          </div>
+          </template>
         </div>
       </div>
     </nav>
