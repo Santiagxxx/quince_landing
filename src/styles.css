@@ -65,28 +65,22 @@ section {
 }
 
 /* =========================
-   NAVBAR NEÓN
+   NAVBAR
 ========================= */
 
 .nav-neon {
   display: inline-flex;
   align-items: center;
-  color: #ff4fcf;
-  font-weight: 900;
+  color: #ff0099;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-decoration: none;
   white-space: nowrap;
   line-height: 1;
-  transition: 0.2s ease;
 }
 
 .nav-neon:hover {
   color: #fff;
-  text-shadow:
-    0 0 4px #fff,
-    0 0 12px #ff00ba,
-    0 0 25px #ff00ba;
 }
 
 .nav-star {
@@ -99,22 +93,12 @@ section {
     0 0 22px #ff00ba;
 }
 
-/* Animación menú mobile */
-.menu-neon-enter-active,
-.menu-neon-leave-active {
-  transition: all 0.25s ease;
-}
-
-.menu-neon-enter-from,
-.menu-neon-leave-to {
-  opacity: 0;
-  transform: translateY(-12px) scale(0.96);
-}
-
-.menu-neon-enter-to,
-.menu-neon-leave-from {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+.nav-separator-img {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* =========================
@@ -181,66 +165,31 @@ section {
 }
 
 /* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1280px) {
-  section {
-    scroll-margin-top: 82px;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero-los {
-    font-size: 4.5rem;
-  }
-
-  .hero-de {
-    font-size: 4.1rem;
-  }
-
-  .hero-cata {
-    font-size: 4.4rem;
-  }
-}
-
-/* =========================
    ANIMACIÓN INICIAL HERO
 ========================= */
 
-/* LOS: empieza más hacia el centro y se abre a la izquierda */
 .hero-los-enter {
   opacity: 0;
   animation: heroLosEnter 2.2s ease forwards;
   animation-delay: 0.15s;
 }
 
-/* DE CATA: empieza más hacia el centro y se abre a la derecha */
 .hero-cata-enter {
   opacity: 0;
   animation: heroCataEnter 2.2s ease forwards;
   animation-delay: 0.15s;
 }
 
-/* Muñeca: aparece después del texto */
 .hero-doll-enter {
   opacity: 0;
   animation: heroDollEnter 1.4s ease forwards;
   animation-delay: 1.45s;
 }
 
-/* Fecha: aparece al final */
 .hero-date-enter {
   opacity: 0;
   animation: heroDateEnter 0.9s ease forwards;
   animation-delay: 2.35s;
-}
-
-/* Navbar: aparece de último */
-.nav-load-enter {
-  opacity: 0;
-  animation: navLoadEnter 0.9s ease forwards;
-  animation-delay: 2.65s;
 }
 
 @keyframes heroLosEnter {
@@ -310,55 +259,21 @@ section {
   }
 }
 
-@keyframes navLoadEnter {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav-load-enter {
-  opacity: 0;
-  animation: navLoadEnter 0.9s ease forwards;
-  animation-delay: 2.65s;
-}
-
-@keyframes navLoadEnter {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav-separator-img {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (min-width: 640px) {
   .nav-separator-img {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .nav-separator-img {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -366,5 +281,73 @@ section {
   .nav-separator-img {
     width: 16px;
     height: 16px;
+  }
+}
+
+@media (max-width: 1280px) {
+  section {
+    scroll-margin-top: 82px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-los {
+    font-size: 4.5rem;
+  }
+
+  .hero-de {
+    font-size: 4.1rem;
+  }
+
+  .hero-cata {
+    font-size: 4.4rem;
+  }
+}
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-los-enter,
+  .hero-cata-enter,
+  .hero-doll-enter,
+  .hero-date-enter {
+    animation: none;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+.nav-center-star {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .nav-center-star {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-center-star {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nav-center-star {
+    width: 36px;
+    height: 36px;
   }
 }

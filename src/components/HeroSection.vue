@@ -45,13 +45,13 @@
 
     <!-- Fecha -->
     <div
-      class="hero-date-enter absolute bottom-[14px] left-1/6 z-40 w-full -translate-x-1/2 text-center  text-[#b00094] md:bottom-[8px] md:left-[16%] md:w-auto md:translate-x-0 md:text-left"
+      class="hero-date-enter absolute bottom-[14px] left-1/6 z-40 w-full -translate-x-1/2 text-center  text-[#cb22ea] md:bottom-[8px] md:left-[16%] md:w-auto md:translate-x-0 md:text-left"
     >
-      <p class="text-[9px] font-black -translate-x-3 tracking-[0.18em] sm:text-[13px]">
+      <p class="text-[7px] font-black -translate-x-2 tracking-[0.18em] sm:text-[13px]">
         19.07.2026
       </p>
 
-      <p class="mt-2 text-[9px] font-black tracking-[0.16em] sm:text-[13px]">
+      <p class="mt-2 text-[7px] font-black tracking-[0.16em] sm:text-[13px]">
         #CATALINDA15
       </p>
     </div>

@@ -64,24 +64,19 @@
         <div
           class="mx-auto max-w-[520px] space-y-3 md:mx-0 md:space-y-4 lg:translate-y-6 lg:space-y-5"
         >
-          <p class="text-[0.78rem] font-medium leading-[1.25] text-fuchsia-500 sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
+          <p class="text-[0.78rem] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
             Hace quince años comenzó una historia llena de sueños, aprendizajes y momentos que han dejado huellas en mi corazón.
             No todos los caminos han sido fáciles, pero cada experiencia me ha enseñado a ser más fuerte, a valorar lo que tengo
             y a sonreír incluso en los días más difíciles.
           </p>
 
-          <p class="text-[0.78rem] font-medium leading-[1.25] text-fuchsia-500 sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
+          <p class="text-[0.78rem] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
             Hoy miro hacia atrás y veo a la niña que fui, tomada de la mano de las personas que me han amado, cuidado y acompañado
             en cada paso. Y mientras miro hacia adelante, siento emoción por todo lo que está por venir, por los sueños que aún quiero
             cumplir y por la persona en la que me estoy convirtiendo.
           </p>
 
-          <p class="text-[0.78rem] font-medium leading-[1.25] text-fuchsia-500 sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
-            Mis quince años no son solo una celebración. Son un agradecimiento a la vida, a mi familia, a mis amigos y a cada persona
-            que ha sido parte de mi historia. Gracias por estar aquí, por creer en mí y por ayudarme a llenar mi vida de recuerdos hermosos.
-          </p>
-
-          <p class="text-[0.78rem] font-medium leading-[1.25] text-fuchsia-500 sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
+          <p class="text-[0.78rem] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
             Esta noche brillarán las luces, pero ninguna brillará más que la felicidad de compartir este momento con ustedes.
           </p>
         </div>
