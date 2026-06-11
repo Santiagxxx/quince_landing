@@ -749,3 +749,98 @@ section {
   object-fit: contain;
   object-position: center center;
 }
+
+
+/* =========================
+   DRESS CODE ARTBOARD
+========================= */
+
+.dress-artboard-wrap {
+  --dress-w: 1000;
+  --dress-h: 620;
+  --dress-scale: min(1, calc((100vw - 8px) / (var(--dress-w) * 1px)));
+  position: relative;
+  width: 100%;
+  height: calc(var(--dress-h) * 1px * var(--dress-scale));
+  overflow: hidden;
+}
+
+.dress-artboard-scale {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(var(--dress-w) * 1px);
+  height: calc(var(--dress-h) * 1px);
+  transform: translateX(-50%) scale(var(--dress-scale));
+  transform-origin: top center;
+}
+
+.dress-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+}
+
+.dress-title-3d {
+  --lima: #c1ff72;
+  --oscuro: #29b554;
+  --claro: #7de89a;
+
+  display: inline-block;
+  position: relative;
+  font-family: 'Rig Solid Bold Halftone', sans-serif;
+  font-size: 7em;
+  font-weight: 900;
+  letter-spacing: -0.17em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  isolation: isolate;
+  margin: 0;
+}
+
+.dress-title-code {
+  margin-top: -0.16em;
+  margin-left: .7em;
+}
+.dress-title-dress {
+  margin-left: .2em;
+}
+
+.dress-title-layer {
+  font: inherit;
+  letter-spacing: inherit;
+  white-space: nowrap;
+}
+
+.dress-layer-extrude {
+  display: block;
+  color: transparent;
+  position: absolute;
+  inset: 0;
+  white-space: nowrap;
+  font: inherit;
+  letter-spacing: inherit;
+  pointer-events: none;
+  z-index: 1;
+  text-shadow:
+    0.06em 0.05em 0 var(--oscuro),
+    0.11em 0.09em 0 var(--claro);
+  opacity: 0.8;
+}
+
+.dress-layer-front {
+  display: block;
+  color: var(--lima);
+  position: relative;
+  z-index: 3;
+}
+
+.dress-reserved-neon {
+  color: #d282ec;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+
+}
