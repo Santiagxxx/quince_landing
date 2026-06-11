@@ -69,17 +69,17 @@ section {
 ========================= */
 
 .nav-content-fit {
-  gap: 0.24rem;
+  gap: 0.26rem;
 }
 
 .nav-neon {
   display: inline-flex;
   align-items: center;
   color: #ff4fcf;
-  font-size: 0.43rem;
+  font-size: 0.48rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.07em;
   text-decoration: none;
   white-space: nowrap;
   line-height: 1;
@@ -94,43 +94,14 @@ section {
     0 0 25px #ff00ba;
 }
 
-.nav-star {
-  flex-shrink: 0;
-  color: #f5d9ff;
-  line-height: 1;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 14px #00d9ff,
-    0 0 22px #ff00ba;
-}
-
-.nav-separator-img,
-.nav-center-star {
+.nav-separator-img {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   object-fit: contain;
   flex-shrink: 0;
-  transform: scale(var(--star-scale, 1.45));
+  transform: scale(var(--star-scale, 1.4));
   transform-origin: center;
-}
-
-/* Animación menú mobile */
-.menu-neon-enter-active,
-.menu-neon-leave-active {
-  transition: all 0.25s ease;
-}
-
-.menu-neon-enter-from,
-.menu-neon-leave-to {
-  opacity: 0;
-  transform: translateY(-12px) scale(0.96);
-}
-
-.menu-neon-enter-to,
-.menu-neon-leave-from {
-  opacity: 1;
-  transform: translateY(0) scale(1);
 }
 
 /* =========================
@@ -313,45 +284,27 @@ section {
    RESPONSIVE NAVBAR
 ========================= */
 
+/* Celular pequeño */
 @media (max-width: 390px) {
   .nav-content-fit {
-    gap: 0.2rem;
+    gap: 0.22rem;
   }
 
   .nav-neon {
-    font-size: 0.39rem;
-    letter-spacing: 0.04em;
+    font-size: 0.46rem;
+    letter-spacing: 0.055em;
   }
 
-  .nav-separator-img,
-  .nav-center-star {
+  .nav-separator-img {
     width: 7px;
     height: 7px;
-    transform: scale(var(--star-scale, 1.55));
   }
 }
 
+/* Celular normal */
 @media (min-width: 391px) and (max-width: 480px) {
   .nav-content-fit {
-    gap: 0.23rem;
-  }
-
-  .nav-neon {
-    font-size: 0.42rem;
-    letter-spacing: 0.05em;
-  }
-
-  .nav-separator-img,
-  .nav-center-star {
-    width: 8px;
-    height: 8px;
-    transform: scale(var(--star-scale, 1.5));
-  }
-}
-
-@media (min-width: 481px) and (max-width: 639px) {
-  .nav-content-fit {
-    gap: 0.3rem;
+    gap: 0.25rem;
   }
 
   .nav-neon {
@@ -359,88 +312,92 @@ section {
     letter-spacing: 0.06em;
   }
 
-  .nav-separator-img,
-  .nav-center-star {
-    width: 9px;
-    height: 9px;
-    transform: scale(var(--star-scale, 1.4));
+  .nav-separator-img {
+    width: 13px;
+    height: 13px;
   }
 }
 
+/* Celular grande */
+@media (min-width: 481px) and (max-width: 639px) {
+  .nav-content-fit {
+    gap: 0.32rem;
+  }
+
+  .nav-neon {
+    font-size: 0.52rem;
+    letter-spacing: 0.07em;
+  }
+
+  .nav-separator-img {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Tablet pequeña */
 @media (min-width: 640px) {
   .nav-content-fit {
     gap: 0.55rem;
   }
 
   .nav-neon {
-    font-size: 0.5rem;
+    font-size: 0.54rem;
     letter-spacing: 0.075em;
   }
 
   .nav-separator-img {
-    width: 11px;
-    height: 11px;
-  }
-
-  .nav-center-star {
-    width: 18px;
-    height: 18px;
+    width: 9px;
+    height: 9px;
   }
 }
 
+/* Tablet */
 @media (min-width: 768px) {
   .nav-content-fit {
     gap: 0.75rem;
   }
 
   .nav-neon {
-    font-size: 0.56rem;
+    font-size: 0.58rem;
   }
 
   .nav-separator-img {
-    width: 13px;
-    height: 13px;
-  }
-
-  .nav-center-star {
-    width: 24px;
-    height: 24px;
+    width: 10px;
+    height: 10px;
   }
 }
 
+/* Laptop */
 @media (min-width: 1024px) {
   .nav-content-fit {
     gap: 1rem;
   }
 
   .nav-neon {
-    font-size: 0.62rem;
+    font-size: 0.64rem;
   }
 
   .nav-separator-img {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
   }
 }
 
+/* Desktop */
 @media (min-width: 1280px) {
   .nav-content-fit {
     gap: 1.25rem;
   }
 
   .nav-neon {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     letter-spacing: 0.09em;
   }
 
   .nav-separator-img {
-    width: 17px;
-    height: 17px;
-  }
-
-  .nav-center-star {
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
   }
 }
 
