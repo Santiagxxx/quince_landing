@@ -35,12 +35,12 @@ const navItems = [
     starAfter: '/images/estrellas/estrellas 4.png',
   },
   {
-    label: 'Lluvia de sobres',
+    label: 'Lluvia sobres',
     href: '#lluvia-sobres',
     starAfter: '/images/estrellas/estrellas 1.png',
   },
   {
-    label: 'Asiste',
+    label: 'Asistencia',
     href: '#te-esperamos',
     starAfter: null,
   },

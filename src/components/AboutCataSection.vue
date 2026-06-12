@@ -1,8 +1,8 @@
 <template>
   <section
-    id="cata"
-    class="relative min-h-[118svh] w-full overflow-hidden bg-black text-white"
-  >
+  id="cata"
+  class="relative min-h-[100svh] w-full overflow-hidden bg-black text-white"
+>
     <!-- Luces decorativas de fondo -->
     <div class="pointer-events-none absolute inset-0">
       <div
@@ -54,9 +54,9 @@
       class="relative z-10 mx-auto grid min-h-[115svh] max-w-[1440px] grid-cols-1 items-center gap-2 px-5 pb-20 pt-16 sm:px-8 md:grid-cols-[42%_58%] md:gap-0 md:px-10 md:py-10 lg:-translate-y-10 lg:px-16"
     >
       <!-- Texto izquierdo -->
-      <div class="order-2 text-center md:order-1 md:text-left">
+      <div class="order-2 -mt-[110px] text-center md:order-1 md:mt-0 md:text-left">
         <h1
-          class="neon-pink translate-y-[15px] mb-4 font-jonathan text-[3.6rem] leading-[0.8] text-white sm:text-[4.8rem] md:mb-6 md:text-[5.3rem] lg:text-[6.3rem] xl:text-[7rem]"
+          class="neon-pink mb-8 font-jonathan text-[3.6rem] leading-[0.8] text-white sm:text-[4.8rem] md:mb-6 md:text-[5.3rem] lg:text-[6.3rem] xl:text-[7rem]"
         >
           Hola, soy Cata.
         </h1>
@@ -64,19 +64,19 @@
         <div
           class="mx-auto max-w-[520px] space-y-3 md:mx-0 md:space-y-4 lg:translate-y-6 lg:space-y-8"
         >
-          <p class="text-[0.78rem] translate-y-[30px] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
+          <p class="text-[0.78rem] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
             Hace quince años comenzó una historia llena de sueños, aprendizajes y momentos que han dejado huellas en mi corazón.
             No todos los caminos han sido fáciles, pero cada experiencia me ha enseñado a ser más fuerte, a valorar lo que tengo
             y a sonreír incluso en los días más difíciles.
           </p>
 
-          <p class="text-[0.78rem] translate-y-[30px] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
+          <p class="text-[0.78rem] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
             Hoy miro hacia atrás y veo a la niña que fui, tomada de la mano de las personas que me han amado, cuidado y acompañado
             en cada paso. Y mientras miro hacia adelante, siento emoción por todo lo que está por venir, por los sueños que aún quiero
             cumplir y por la persona en la que me estoy convirtiendo.
           </p>
 
-          <p class="text-[0.78rem] translate-y-[30px] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
+          <p class="text-[0.78rem] font-medium leading-[1.25] text-[#ff0099] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem]">
             Esta noche brillarán las luces, pero ninguna brillará más que la felicidad de compartir este momento con ustedes.
           </p>
         </div>
@@ -96,10 +96,10 @@
 
     <!-- Frase inferior -->
     <div
-      class="pointer-events-none absolute bottom-5 translate-y-[10px] left-1/2 z-20 w-full -translate-x-1/2 px-5 text-center md:left-[24%] md:w-auto md:translate-x-0 md:text-left lg:bottom-8"
+      class="pointer-events-none absolute bottom-[75px] left-1/2 z-20 w-full -translate-x-1/2 px-5 text-center md:left-[24%] md:w-auto md:translate-x-0 md:text-left lg:bottom-8"
     >
       <p
-        class="neon-green font-jonathan translate-y-[-12px] text-[2.3rem] leading-none text-lime-200 sm:text-[3.2rem] md:text-[4rem] lg:text-[4.6rem] xl:text-[5rem]"
+        class="neon-green font-jonathan text-[2.3rem] leading-none text-lime-200 sm:text-[3.2rem] md:text-[4rem] lg:text-[4.6rem] xl:text-[5rem]"
       >
         “Una noche para brillar juntos”
       </p>
