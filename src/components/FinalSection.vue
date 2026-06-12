@@ -17,7 +17,7 @@
       <img
         src="/images/flores.png"
         alt="Cata con flores"
-        class="absolute bottom-0 left-[-1%] z-[5] h-[104%] w-auto object-contain"
+        class="absolute bottom-- left-[-1%] z-[5] h-[104%] w-auto object-contain"
       />
 
       <!-- Texto -->

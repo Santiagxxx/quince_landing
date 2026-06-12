@@ -28,36 +28,45 @@ const dressIdeas = [
 
         <!-- Texto principal -->
         <div class="absolute left-[34px] top-[56px] z-[5] w-[420px]">
-          <div class="dress-title-wrap " aria-label="EL DRESS CODE">
-            <!-- Línea 1 -->
-            <h2 class="dress-title-3d dress-title-dress">
-              <span class="dress-layer-extrude">EL DRESS</span>
-              <span class="dress-layer-front">EL DRESS</span>
-            </h2>
+  <div class="dress-title-wrap" aria-label="EL DRESS CODE">
+    <!-- Línea 1 -->
+    <div class="flex items-start gap-[16px]">
+  <!-- EL -->
+  <h2 class="dress-title-3d dress-title-el">
+    <span class="dress-layer-extrude">EL</span>
+    <span class="dress-layer-front">EL</span>
+  </h2>
 
-            <!-- Línea 2 -->
-            <h2 class="dress-title-3d dress-title-code">
-              <span class="dress-layer-extrude">CODE</span>
-              <span class="dress-layer-front">CODE</span>
-            </h2>
-          </div>
-          <div
-            class="mt-[40px] w-[380px] font-medium text-[15px] uppercase leading-[1.16] tracking-[0.03em] text-pink-200"
-          >
-            <p>Brilla con color</p>
-            <p>
-              Te invitamos a usar colores vibrantes, neón o detalles
-              fluorescentes.
-            </p>
-            <p>¡Esta noche no hay espacio para pasar desapercibido!</p>
+  <!-- DRESS -->
+  <h2 class="dress-title-3d dress-title-dress">
+    <span class="dress-layer-extrude">DRESS</span>
+    <span class="dress-layer-front">DRESS</span>
+  </h2>
+</div>
 
-            <p
-              class="dress-reserved-neon mt-[12px] inline-block text-[1em] font-black leading-none"
-            >
-              Nos reservamos el uso del color lila
-            </p>
-          </div>
-        </div>
+    <!-- Línea 2 -->
+    <h2 class="dress-title-3d dress-title-code">
+      <span class="dress-layer-extrude">CODE</span>
+      <span class="dress-layer-front">CODE</span>
+    </h2>
+  </div>
+
+  <div
+    class="mt-[40px] w-[380px] font-medium text-[15px] uppercase leading-[1.16] tracking-[0.03em] text-pink-200"
+  >
+    <p>Brilla con color</p>
+    <p>
+      Te invitamos a usar colores vibrantes, neón o detalles fluorescentes.
+    </p>
+    <p>¡Esta noche no hay espacio para pasar desapercibido!</p>
+
+    <p
+      class="dress-reserved-neon mt-[12px] inline-block text-[1em] font-black leading-none"
+    >
+      Nos reservamos el uso del color lila
+    </p>
+  </div>
+</div>
 
         <!-- Cata principal -->
         <div
