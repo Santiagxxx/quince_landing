@@ -1156,3 +1156,38 @@ section {
     drop-shadow(0 0 18px #a93cff);
 }
 
+.envelope-artboard-wrap {
+  --envelope-w: 1000;
+  --envelope-h: 620;
+  --envelope-scale: min(1, calc((100vw - 8px) / (var(--envelope-w) * 1px)));
+
+  position: relative;
+  width: 100%;
+  height: calc(var(--envelope-h) * 1px * var(--envelope-scale));
+  overflow: hidden;
+}
+
+.envelope-artboard-scale {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(var(--envelope-w) * 1px);
+  height: calc(var(--envelope-h) * 1px);
+  transform: translateX(-50%) scale(var(--envelope-scale));
+  transform-origin: top center;
+}
+
+.envelope-script {
+  font-family: 'Jonathan Signature', cursive;
+  color: #ffe5fb;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 0.82;
+  text-align: center;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 8px #ff9be8,
+    0 0 18px #ff4fd8,
+    0 0 34px #ff00bf,
+    0 0 55px #ff00bf;
+}
